@@ -1017,10 +1017,10 @@ func (app *BaseApp) Commit() (res abci.ResponseCommit) {
 
 	if halt {
 		app.halt()
-
+		app.logger.Error("blade halt", "commit", "xxx")
 		// Note: State is not actually committed when halted. Logs from Tendermint
 		// can be ignored.
-		return abci.ResponseCommit{}
+		//return abci.ResponseCommit{}
 	}
 
 	// Write the DeliverTx state which is cache-wrapped and commit the MultiStore.
